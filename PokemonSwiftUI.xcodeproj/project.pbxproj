@@ -57,9 +57,9 @@
 			children = (
 				E5120B132AAFEC4500E8017A /* PokemonSwiftUIApp.swift */,
 				E5120B152AAFEC4500E8017A /* ContentView.swift */,
-				E5120B172AAFEC4600E8017A /* Assets.xcassets */,
 				E5120B1C2AAFEC4600E8017A /* Persistence.swift */,
 				E5120B1E2AAFEC4600E8017A /* PokemonSwiftUI.xcdatamodeld */,
+				E5120B172AAFEC4600E8017A /* Assets.xcassets */,
 				E5120B192AAFEC4600E8017A /* Preview Content */,
 			);
 			path = PokemonSwiftUI;
