@@ -10,6 +10,9 @@ import CoreData
 
 struct PokemonDetail: View {
     
+    // for core data saving
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @EnvironmentObject var pokemon: Pokemon
     @State var showShiny = false
     
@@ -42,7 +45,30 @@ struct PokemonDetail: View {
                         .background(Color(type.capitalized))
                         .cornerRadius(50)
                 }
+                
                 Spacer()
+                
+                Button {
+                    withAnimation {
+                        pokemon.favorite.toggle()
+                        
+                        // apply changes to core data
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            let nsError = error as NSError
+                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    }
+                } label: {
+                    if pokemon.favorite {
+                        Image(systemName: "star.fill")
+                    } else {
+                        Image(systemName: "star")
+                    }
+                }
+                .font(.largeTitle)
+                .foregroundColor(.yellow)
             }
             .padding()
             

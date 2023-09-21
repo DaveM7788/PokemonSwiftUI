@@ -30,7 +30,7 @@ struct PersistenceController {
         samplePokemon.speed = 45
         samplePokemon.sprite = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
         samplePokemon.shiny = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png")
-        samplePokemon.favorite = false
+        samplePokemon.favorite = true
         
         do {
             try viewContext.save()
